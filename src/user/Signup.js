@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
@@ -17,11 +16,13 @@ import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 600,
+    width: '100%',
+    height: '100%',
     margin: 'auto',
     textAlign: 'center',
-    marginTop: theme.spacing(12),
-    paddingBottom: theme.spacing(2)
+    marginTop: theme.spacing(5),
+    paddingBottom: theme.spacing(2),    
+    boxShadow: 'none',
   },
   error: {
     verticalAlign: 'middle'
@@ -37,7 +38,8 @@ const useStyles = makeStyles(theme => ({
   },
   submit: {
     margin: 'auto',
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    backgroundColor: '#E27D5F',
   }
 }))
 
@@ -71,7 +73,8 @@ export default function Signup() {
   }
 
     return (<div>
-      <Card className={classes.card}>
+      <div className="sign-in">
+      <div className={classes.card}>
         <CardContent>
           <Typography variant="h6" className={classes.title}>
             Sign Up
@@ -88,7 +91,11 @@ export default function Signup() {
         <CardActions>
           <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
         </CardActions>
-      </Card>
+      </div>
+      <div className="signin-img-wrapper">
+                <img src="./images/signup.svg" alt="sign image" />
+            </div>
+      </div>
       <Dialog open={values.open} disableBackdropClick={true}>
         <DialogTitle>New Account</DialogTitle>
         <DialogContent>
